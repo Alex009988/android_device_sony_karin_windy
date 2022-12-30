@@ -26,7 +26,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
-    ro.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=true \
     persist.data.qmi.adb_logmask=0 \
     ro.data.large_tcp_window_size=true \

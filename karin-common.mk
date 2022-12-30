@@ -18,24 +18,15 @@
 $(call inherit-product, device/sony/kitakami-common/device-common.mk)
 
 # Screen density
-PRODUCT_AAPT_CONFIG := xlarge
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
-PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1600
 
-# init
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/init.qcom.power.sh:system/bin/init.qcom.power.sh
-
 # Audio configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
-    $(LOCAL_PATH)/audio/audio_output_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_output_policy.conf \
-    $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Input
@@ -65,10 +56,6 @@ PRODUCT_COPY_FILES += \
 
 # Tablet
 PRODUCT_CHARACTERISTICS := tablet
-
-# Thermal
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine.conf
 
 # WLAN
 PRODUCT_COPY_FILES += \
