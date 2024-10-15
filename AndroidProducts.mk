@@ -16,7 +16,3 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_karin_windy.mk
 
-COMMON_LUNCH_CHOICES := \
-    lineage_karin_windy-user \
-    lineage_karin_windy-userdebug \
-    lineage_karin_windy-eng
