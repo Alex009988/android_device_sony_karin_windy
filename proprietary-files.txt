@@ -429,10 +429,8 @@ vendor/lib64/libsensor_reg.so
 vendor/lib64/sensors.ssc.so
 
 # Thermal
-lib64/liblights-core.so
-lib/liblights-core.so
-lib64/libidd.so
-lib/libidd.so
+vendor/lib64/libidd.so|lib64/libidd.so
+vendor/lib/libidd.so|lib/libidd.so
 
 # Touchscreen
 vendor/bin/touch_fusion

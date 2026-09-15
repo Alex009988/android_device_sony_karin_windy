@@ -26,10 +26,6 @@ $(call soong_config_set_bool,qtipower,interaction_boost,true)
 PRODUCT_PACKAGES += \
     liblights-core_vendor_shim
 
-# FBE/metadata encryption
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vold.projid_quotas=false \
-    ro.crypto.dm_default_key.options_format.version=2
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
