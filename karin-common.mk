@@ -17,15 +17,19 @@
 # Get common aspects
 $(call inherit-product, device/sony/kitakami-common/device-common.mk)
 
-# Get soong/libinit/vendor
-$(call soong_config_set,libinit,vendor_init_lib,libinit_satsuki)
-
 # Power HAL's DOUBLE_TAP_TO_WAKE handler.
 $(call soong_config_set,qtipower,tap_to_wake_node,/sys/devices/virtual/input/clearpad/wakeup_gesture)
 
 # Enable the -DINTERACTION_BOOST cflag for the power HAL.
 $(call soong_config_set_bool,qtipower,interaction_boost,true)
+# Fingerprint — FPC1145 over SPI + Sony fingerprint.msm8994.so (HAL @1.0) loaded by the LineageOS AIDL bridge service.
+PRODUCT_PACKAGES += \
+    liblights-core_vendor_shim
 
+# FBE/metadata encryption
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vold.projid_quotas=false \
+    ro.crypto.dm_default_key.options_format.version=2
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
